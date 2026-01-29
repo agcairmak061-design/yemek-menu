@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ev Lezzetleri | Online Sipariş</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #24269c;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #23a1aa;
+        }
+
+        button {
+            background: #2a33b4;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1573aa;
+        }
+
+        .cart {
+            margin-top: 40px;
+            background: rgb(11, 13, 124);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(73, 35, 209, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h1>🍴 Ev Lezzetleri</h1>
+
+<!-- Ana Yemek Menüsü -->
+<div class="menu">
+    <!-- Mantı -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa?auto=format&fit=crop&w=600&q=80" alt="Mantı">
+        <h3>Mantı</h3>
+        <p>Ev yapımı mantı</p>
+        <p class="price">140₺</p>
+        <button onclick="siparisEkle('Mantı', 140)">Sipariş Ver</button>
+    </div>
+
+    <!-- Makarna -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80" alt="Makarna">
+        <h3>Makarna</h3>
+        <p>Kremalı mantarlı</p>
+        <p class="price">90₺</p>
+        <button onclick="siparisEkle('Makarna', 90)">Sipariş Ver</button>
+    </div>
+
+    <!-- Su Böreği -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Su Böreği">
+        <h3>Su Böreği</h3>
+        <p>Peynirli su böreği</p>
+        <p class="price">110₺</p>
+        <button onclick="siparisEkle('Su Böreği', 110)">Sipariş Ver</button>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Hamburger">
+        <h3>Klasik Hamburger</h3>
+        <p>120gr dana köfte</p>
+        <p class="price">130₺</p>
+        <button onclick="siparisEkle('Klasik Hamburger', 130)">Sipariş Ver</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Cheeseburger">
+        <h3>Cheeseburger</h3>
+        <p>Cheddar peynirli</p>
+        <p class="price">145₺</p>
+        <button onclick="siparisEkle('Cheeseburger', 145)">Sipariş Ver</button>
+    </div>
+</div>
+
+<!-- Tatlı Menüsü Başlığı -->
+<h2 style="grid-column:1/-1; text-align:center; color:#232f9c; margin-top:40px;">🍰 Tatlı Menüsü</h2>
+
+<div class="menu">
+    <!-- Baklava -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1631548412360-57f63aef6048?auto=format&fit=crop&w=600&q=80" alt="Baklava">
+        <h3>Baklava</h3>
+        <p>Gaziantep fıstıklı baklava</p>
+        <p class="price">120₺</p>
+        <button onclick="siparisEkle('Baklava', 120)">Sipariş Ver</button>
+    </div>
+
+    <!-- Künefe -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1617191519105-0e1b15f6c0e3?auto=format&fit=crop&w=600&q=80" alt="Künefe">
+        <h3>Künefe</h3>
+ <p>Sıcak, peynirli künefe</p>
+        <p class="price">130₺</p>
+        <button onclick="siparisEkle('Künefe', 130)">Sipariş Ver</button>
+    </div>
+
+    <!-- Fırın Sütlaç -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1617191519230-71c7d0b50d7a?auto=format&fit=crop&w=600&q=80" alt="Sütlaç">
+        <h3>Fırın Sütlaç</h3>
+        <p>Üzeri kızarmış sütlaç</p>
+        <p class="price">80₺</p>
+        <button onclick="siparisEkle('Fırın Sütlaç', 80)">Sipariş Ver</button>
+    </div>
+
+    <!-- Profiterol -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Profiterol">
+        <h3>Profiterol</h3>
+        <p>Bol çikolata soslu</p>
+        <p class="price">95₺</p>
+        <button onclick="siparisEkle('Profiterol', 95)">Sipariş Ver</button>
+    </div>
+
+    <!-- Trileçe -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1627308595123-6bde0c7e8c7a?auto=format&fit=crop&w=600&q=80" alt="Trileçe">
+        <h3>Trileçe</h3>
+        <p>Karamelli trileçe</p>
+        <p class="price">100₺</p>
+        <button onclick="siparisEkle('Trileçe', 100)">Sipariş Ver</button>
+    </div>
+
+    <!-- Kazandibi -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1632823471565-1ecb9f8b5a7d?auto=format&fit=crop&w=600&q=80" alt="Kazandibi">
+        <h3>Kazandibi</h3>
+        <p>Yanık tabanlı kazandibi</p>
+        <p class="price">85₺</p>
+        <button onclick="siparisEkle('Kazandibi', 85)">Sipariş Ver</button>
+    </div>
+</div>
+
+<!-- TEK SEPET -->
+<div class="cart">
+    <h2>🛒 Sepet</h2>
+    <ul id="sepet"></ul>
+    <p><strong>Toplam: <span id="toplam">0</span> ₺</strong></p>
+    <button onclick="siparisTamamla()">Siparişi Tamamla</button>
+</div>
+
+<!-- İletişim ve Adres -->
+<div style="margin-top:40px; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <h2>📞 İletişim</h2>
+    <p><strong>Telefon:</strong> 0555 555 55 55</p>
+    <p><strong>E-posta:</strong> info@evlezzetleri.com</p>
+
+    <h2>📍 Adres</h2>
+    <p>
+        Gaziantep / Şahinbey<br>
+        Karataş Mahallesi<br>
+        Örnek Sokak No:10
+    </p>
+</div>
+
+<script>
+    let toplam = 0;
+    const sepet = document.getElementById("sepet");
+    const toplamYazi = document.getElementById("toplam");
+
+    function siparisEkle(yemek, fiyat) {
+        const li = document.createElement("li");
+        li.textContent = yemek + " - " + fiyat + "₺";
+        sepet.appendChild(li);
+
+        toplam += fiyat;
+        toplamYazi.textContent = toplam;
+    }
+
+    function siparisTamamla() {
+        if (toplam === 0) {
+            alert("Sepet boş!");
+        } else {
+            alert("Siparişiniz alındı ✅ Toplam: " + toplam + "₺");
+            sepet.innerHTML = "";
+            toplam = 0;
+            toplamYazi.textContent = 0;
+        }
+    }
+</script>
+
+</body>
+</html>
